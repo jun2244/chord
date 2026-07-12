@@ -1,8 +1,6 @@
 # chord — A Stata package to draw Chord Diagrams 
 
-<p align="center">
-  <img src="figs/cover.svg" width="640" alt="chord diagram cover image">
-</p>
+<p align="center"> <img src="figs/cover.svg"alt="chord diagram cover image"></p>
 
 ## What is this
 
@@ -98,7 +96,6 @@ input str10 from str10 to value
 "Southwest" "Northeast" 40
 end
 
-```stata
 chord from to value, ///
     sectororder(East South North Southwest Northeast) /// starting from the 12 o'clock position, arrange the sectors clockwise
     colorlist( #1F77B4 #FF7F0E #2CA02C #D62728 #9467BD) /// color of ribbon, one color per sector
@@ -220,7 +217,7 @@ chord region s e n sw ne, scheme(white_tableau) ///
 
 ---
 
-### 5. Full-feature showcase
+### 5. Cover image
 
 ```stata
 clear
@@ -278,7 +275,7 @@ chord from to value, ///
     nrim(300) nconn(500) nring(500) axisarcres(500) linkres(500) // rendering resolution
 ```
 
-<p align="center"><img src="figs/cover_image.svg" width="520"></p>
+<p align="center"><img src="figs/cover_image.svg"></p>
 
 `colorlist()` applies a custom curated palette to the sectors; `bulge()`, `ringwidth()`, and `gap()` are tuned together for a tight, elegant layout. `highlighttop()` picks out each sector's single largest outgoing ribbon, while `dimalpha()` fades every other ribbon into the background. `ribbonposition()` pins every highlighted ribbon's endpoints to the same relative slot on both sides, so the six highlighted ribbons form a clean, symmetric hexagonal pattern instead of scattering wherever the natural sort order would place them. `labelinside` moves the labels onto the ring itself, and `sectorlabeloverride()` pads single-letter sector names with extra spaces to nudge their horizontal centering inside the narrow ring. Finally, a matched `graphregion()`/`plotregion()` background color and very high rendering-resolution settings (`nrim()`, `nconn()`, `nring()`, `axisarcres()`, `linkres()`) make the diagram suitable as a crisp, large-format cover image. `highlighttop()` highlights each sector's top-N outgoing or incoming ribbons, dimming the rest via `dimalpha()`.
 
@@ -391,3 +388,23 @@ Bug reports and feature requests are welcome via email or GitHub Issues.
 ## License
 
 MIT License
+
+Copyright (c) 2026 Jiajun Zhou & De Zhou
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
