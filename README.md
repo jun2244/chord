@@ -38,6 +38,7 @@ net install chord, from("https://raw.githubusercontent.com/jun2244/chord/main/")
 ```
 
 Option 2: clone and place the files on your ado path manually
+
 Copy chord.ado and chord.sthlp into your personal ado directory, e.g.:
 C:\ado\personal\c\
 
