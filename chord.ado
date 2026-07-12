@@ -407,7 +407,7 @@ end
 
 capture program drop chord
 program define chord, rclass
-    version 14.0
+    version 15.0
 
     syntax varlist(min=2) [if] [in] [, ///
           ADJMATRIX                           ///

@@ -358,8 +358,7 @@ help chord
 
 ## Requirements
 
-- Stata 14.0 or newer (for Chinese/Unicode variable names)
-- The `%alpha` color opacity syntax additionally requires Stata 15 or newer
+- Stata 15.0 or newer (for `%alpha` color opacity syntax and Chinese/Unicode variable names)
 
 ---
 
