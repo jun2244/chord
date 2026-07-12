@@ -407,7 +407,7 @@ end
 
 capture program drop chord
 program define chord, rclass
-    version 15.0
+    version 14.0
 
     syntax varlist(min=2) [if] [in] [, ///
           ADJMATRIX                           ///
@@ -910,13 +910,6 @@ program define chord, rclass
         exit 2000
     }
 
-    * Preserve exactly ONCE here, regardless of adjmatrix mode, to protect the
-    * user's dataset; all subsequent keep/collapse/clear operate on this
-    * snapshot and a single restore at the end returns the data untouched.
-    * An earlier version preserved again inside the adjmatrix branch, which
-    * triggered "already preserved" (Stata forbids two preserves without a
-    * restore in between).
-    * 中文说明：这里统一preserve一次；此前adjmatrix分支内重复preserve会报错。
     preserve
 
     * ================================================================
