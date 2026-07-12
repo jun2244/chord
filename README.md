@@ -1,7 +1,7 @@
 # chord — A Stata package to draw Chord Diagrams 
 
 <p align="center">
-  <img src="figs/cover.png" width="640" alt="chord diagram cover image">
+  <img src="figs/cover.svg" width="640" alt="chord diagram cover image">
 </p>
 
 ## What is this
@@ -278,7 +278,7 @@ chord from to value, ///
     nrim(300) nconn(500) nring(500) axisarcres(500) linkres(500) // rendering resolution
 ```
 
-<p align="center"><img src="figs/cover_image.png" width="520"></p>
+<p align="center"><img src="figs/cover_image.svg" width="520"></p>
 
 `colorlist()` applies a custom curated palette to the sectors; `bulge()`, `ringwidth()`, and `gap()` are tuned together for a tight, elegant layout. `highlighttop()` picks out each sector's single largest outgoing ribbon, while `dimalpha()` fades every other ribbon into the background. `ribbonposition()` pins every highlighted ribbon's endpoints to the same relative slot on both sides, so the six highlighted ribbons form a clean, symmetric hexagonal pattern instead of scattering wherever the natural sort order would place them. `labelinside` moves the labels onto the ring itself, and `sectorlabeloverride()` pads single-letter sector names with extra spaces to nudge their horizontal centering inside the narrow ring. Finally, a matched `graphregion()`/`plotregion()` background color and very high rendering-resolution settings (`nrim()`, `nconn()`, `nring()`, `axisarcres()`, `linkres()`) make the diagram suitable as a crisp, large-format cover image. `highlighttop()` highlights each sector's top-N outgoing or incoming ribbons, dimming the rest via `dimalpha()`.
 
