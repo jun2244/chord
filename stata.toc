@@ -1,0 +1,5 @@
+v 1.0.0
+d 'CHORD': Stata module to draw chord diagrams
+d Author: Jiajun Zhou (Technical University of Munich) & De Zhou (Nanjing Agricultural University)
+d Distribution-Date: 20260709
+p chord

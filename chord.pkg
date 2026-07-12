@@ -1,0 +1,9 @@
+v 1.0.0
+d 'CHORD': Stata module to draw chord diagrams
+d Author: Jiajun Zhou (Technical University of Munich) & De Zhou (Nanjing Agricultural University)
+d Inspired by R package circlize (Gu et al., 2014, Bioinformatics 30:2811-2812).
+d Distribution-Date: 20260709
+d A Stata command to create chord diagrams for visualizing flows or connections
+d between categories. It supports flexible layout and styling options.
+f chord.ado
+f chord.sthlp
