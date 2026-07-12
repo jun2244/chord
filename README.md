@@ -30,42 +30,22 @@ Key capabilities:
 
 ---
 
-## Installation
+## Installation（安装）
 
+Option 1: install directly from this repository (recommended)
 ```stata
-* Option 1: install directly from this repository (recommended)
-net install chord, from("https://raw.githubusercontent.com/jun2244/chord/main") replace
-
-* Option 2: clone and place the files on your ado path manually
-git clone https://github.com/jun2244/chord.git
-* Copy chord.ado and chord.sthlp into your personal ado directory, e.g.:
-* C:\ado\personal\c\
+net install chord, from("https://raw.githubusercontent.com/jun2244/chord/main/") replace
 ```
 
-After installation:
+Option 2: clone and place the files on your ado path manually
+Copy chord.ado and chord.sthlp into your personal ado directory, e.g.:
+C:\ado\personal\c\
 
-```stata
-help chord
-```
-
-## 安装
-
-```stata
-* 方式一：从本仓库直接安装（推荐）
-net install chord, from("https://raw.githubusercontent.com/jun2244/chord/main") replace
-
-* 方式二：clone 后手动放入 ado 搜索路径
-git clone https://github.com/jun2244/chord.git
-* 将 chord.ado 和 chord.sthlp 复制到 personal ado 目录，例如：
-* C:\ado\personal\c\
-```
-
-安装完成后：
+After installation（安装完成后）:
 
 ```stata
 help chord
 ```
----
 
 ## Quick start
 
@@ -95,7 +75,9 @@ input str10 from str10 to value
 "North"     "Northeast" 23
 "Southwest" "Northeast" 40
 end
+```
 
+```stata
 chord from to value, ///
     sectororder(East South North Southwest Northeast) /// starting from the 12 o'clock position, arrange the sectors clockwise
     colorlist( #1F77B4 #FF7F0E #2CA02C #D62728 #9467BD) /// color of ribbon, one color per sector
