@@ -42,6 +42,8 @@ Option 2: clone and place the files on your ado path manually
 Copy chord.ado and chord.sthlp into your personal ado directory, e.g.:
 C:\ado\personal\c\
 
+
+
 After installation（安装完成后）:
 
 ```stata
@@ -121,7 +123,7 @@ chord from to value, ///
 
 **中文：扇区分组**
 
-`sectorgroup()` 把扇区分成任意命名的组（例子中是"A"和"b"两组）。当结果恰好是两组时，图形会自动旋转，让两组中心对齐左右分布（也可用 `splithorizontal` 改为上下分布），`groupgap()` 控制组间间隙, `gap()` 控制组内扇区间隙, `color%x`控制颜色透明度x%, `startangle()`将整个图旋转#度 。
+`sectorgroup()` 把扇区分成任意命名的组（该例子是"A"和"b"两组）。当结果恰好是两组时，图形会自动旋转，让两组中心对齐左右分布（也可用 `splithorizontal` 改为上下分布），`groupgap()` 控制组间间隙, `gap()` 控制组内扇区间隙, `color%x`控制颜色透明度x%, `startangle()`将整个图旋转#度 。
 
 ---
 
@@ -141,8 +143,8 @@ chord from to value,  scheme(white_tableau) ///
     labelradius(1.25) /// controls radius at which labels are placed
     ribbonbulgeoverride(East-Northeast-0.4) /// controls curvature of ribbon
     ribbonzorder(East-Southwest South-Southwest) /// controls draw order of ribbon
-    title("ribbon 'East to South' is topmost", size(small) color(navy) pos(11)) /// title text
-    subtitle("ribbon 'North to West' second", size(small) color(orange) pos(11)) /// subtitle text
+    title("ribbon 'East to Southwest' is topmost", size(small) color(navy) pos(11)) /// title text
+    subtitle("ribbon 'South to Southwest' is second", size(small) color(orange) pos(11)) /// subtitle text
     caption("Figure 3. Flows between regions", size(small) color(gs0) pos(6)) //  caption text
 ```
 
@@ -150,7 +152,7 @@ chord from to value,  scheme(white_tableau) ///
 
 `ribbontransparency()` fades all ribbons to 20% opacity, then `ribboncoloroverride()` recolors two specific directed ribbons (East→Southwest, South→Southwest) and restores them to full opacity, making them stand out clearly against the dimmed background. `arrow` turns each ribbon's destination end into an arrowhead, with `arrowgap()` reserving its radial depth. A numeric `ticks` axis (solid) and a `pctticks` percentage axis (dotted, via `pctticklpattern()`) are stacked together with a small gap (`pctaxisgap()`) and a smaller label size (`pctticklabsize()`). `ribbonbulgeoverride()` reshapes the curvature of a single ribbon independently of the global default, and `ribbonzorder()` raises the two recolored ribbons above all others so they are never hidden underneath. Finally, `title()`, `subtitle()`, and `caption()` are each positioned and colored independently to annotate the figure.
 
-**中文：局部重新着色、内侧目标色段、双轴与多层标题**
+**中文：部分条带重新着色、内侧目标色段、双轴与多层标题**
 
 `ribbontransparency()` 先把所有色带整体压暗到20%的不透明度，再用 `ribboncoloroverride()` 单独为两条指定方向的色带（East→Southwest、South→Southwest）重新着色并恢复为完全不透明，使它们清晰凸显。`arrow` 把每条色带的到达端画成箭头，`arrowgap()` 预留箭头所需的径向深度。数值轴 `ticks`（实线）与百分比轴 `pctticks`（通过 `pctticklpattern()` 设为点线）叠放在一起，之间用 `pctaxisgap()` 控制间距，并用 `pctticklabsize()` 把百分比轴标签调小。`ribbonbulgeoverride()` 单独调整某一条色带的弯曲程度，不受全局默认值影响；`ribbonzorder()` 把两条被重新着色的色带提升到最上层，确保它们不会被其他色带遮挡。最后，`title()`、`subtitle()`、`caption()` 分别设置了各自的位置和颜色，为图形添加多层次的标题说明。
 

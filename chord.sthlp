@@ -63,6 +63,7 @@ for the one-line rule behind this and a quick-reference table with examples.
 
 {syntab:Ribbon appearance}
 {synopt:{opt colorlist(colors)}}{bf:[s]} one color per sector, e.g. {cmd:colorlist(navy #FF7F0E 128,0,200)}{p_end}
+{synopt:{opt ribbontransparency(#)}}ribbon transparency, 0-100; default is {cmd:ribbontransparency(30)}{p_end}
 {synopt:{opt ribboncolorover:ride(spec)}}{bf:[s]} recolor individual ribbons, e.g. {cmd:ribboncoloroverride(East-South-red)}{p_end}
 {synopt:{opt bulge(#)}}curvature of ribbons toward the center, 0-1; default is {cmd:bulge(0.85)}{p_end}
 {synopt:{opt ribbonbulgeover:ride(spec)}}{bf:[s]} per-ribbon curvature, e.g. {cmd:ribbonbulgeoverride(East-South-0.4)}{p_end}
@@ -76,11 +77,11 @@ for the one-line rule behind this and a quick-reference table with examples.
 {syntab:Sector ring}
 {synopt:{opt ringwidth(#)}}radial thickness of the outer sector ring, 0-1; default is {cmd:ringwidth(0.06)}{p_end}
 {synopt:{opt ringcolorlist(colors)}}{bf:[s]} one ring color per sector; default is the sector color{p_end}
+{synopt:{opt ringtransparency(#)}}ring transparency, 0-100; default is {cmd:ringtransparency(0)}{p_end}
 {synopt:{opt interseg}}draw a thin inner "target segment" arc, colored by destination sector, under each ribbon's from-end{p_end}
 {synopt:{opt intersegwidth(#)}}radial thickness of the target segments; default is {cmd:intersegwidth(0.01)}{p_end}
 {synopt:{opt intersegoutgap(#)}}gap between the ring and the target segments; default is {cmd:intersegoutgap(0.03)}{p_end}
 {synopt:{opt intersegingap(#)}}gap between the target segments and the ribbons; default is {cmd:intersegingap(0.01)}{p_end}
-{synopt:{opt intersegres(#)}}arc resolution of each target segment; default is {cmd:intersegres(15)}{p_end}
 
 {syntab:Sector labels}
 {synopt:{opt labelsize(size)}}label size; a number or a {help textsizestyle} keyword; default is {cmd:labelsize(2.2)}{p_end}
@@ -150,6 +151,7 @@ for the one-line rule behind this and a quick-reference table with examples.
 {synopt:{opt nring(#)}}points per sector-ring arc; default is {cmd:nring(60)}{p_end}
 {synopt:{opt axisarcres(#)}}points per axis arc line; default is {cmd:axisarcres(40)}{p_end}
 {synopt:{opt linkres(#)}}points per link curve; default is {cmd:linkres(60)}{p_end}
+{synopt:{opt intersegres(#)}}arc resolution of each target segment; default is {cmd:intersegres(15)}{p_end}
 
 {syntab:Titles and overall graph}
 {synopt:{opt title(text [, textbox_options])}}overall title; passed to {helpb title_options:twoway title()}{p_end}
@@ -420,6 +422,12 @@ described under {it:Common syntax conventions} below.  If fewer colors than
 sectors are given, the remaining sectors fall back to the default palette:
 the scheme palette when {opt scheme()} is specified, otherwise evenly
 spaced HSV hues.
+
+{phang}
+{opt ribbontransparency(#)} sets the global ribbon transparency (0 = opaque,
+100 = invisible).  Default is 30.  A per-color {cmd:%alpha} suffix in
+{opt colorlist()} or {opt ribboncoloroverride()} takes precedence for that
+item.
 
 {phang}
 {opt ribboncoloroverride(spec)} recolors individual directed ribbons with
@@ -879,4 +887,4 @@ zhou-de@hotmail.com
 {pstd}
 The design of {cmd:chord} is inspired by the R package
 {bf:circlize} (Gu et al., 2014, {it:Bioinformatics} 30:2811-2812).
-Bug reports and feature requests are welcome by email or on the project's GitHub repository.{p_end}
+Bug reports and feature requests are welcome by email or on the project's GitHub repository issues.{p_end}
